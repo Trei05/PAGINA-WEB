@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio de Regalos 🎁</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <h1>🎄 Intercambio de Regalos</h1>
+        <p>Un pequeño detalle, una gran sorpresa.</p>
+        <nav class="barra-nav">
+            <button type="button" class="nav-btn" data-target="bienvenida">Inicio</button>
+            <button type="button" class="nav-btn" data-target="registro">Crear</button>
+            <button type="button" class="nav-btn" data-target="unirse">Registrarse</button>
+            <button type="button" class="nav-btn" data-target="sala">Sala y Sorteo</button>
+            <button type="button" class="nav-btn" data-target="consulta">Mi Asignación</button>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <section id="bienvenida" class="bienvenida">
+            <div class="icono">🎁</div>
+            <h2>¡La magia está por comenzar!</h2>
+            <p>
+                Crea un intercambio, regístrate con tu código y PIN personal
+                y descubre en privado a quién regalar.
+            </p>
+            <div class="acciones-grupo">
+                <button type="button" id="btnComenzar">Crear intercambio</button>
+                <button type="button" id="btnIrUnirse">Unirme con un código</button>
+                <button type="button" id="btnIrSala">Sala de espera / Sorteo</button>
+                <button type="button" id="btnIrConsulta">Ver mi asignación</button>
+            </div>
+        </section>
+
+        <section id="registro" class="panel oculto">
+            <h2>Crear intercambio</h2>
+            <form id="formCrearIntercambio">
+                <label for="evento">Nombre del intercambio</label>
+                <input type="text" id="evento" name="nombre" placeholder="Ej. Navidad 2026" maxlength="100" required>
+
+                <label for="fecha">Fecha del evento (opcional)</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="cantidad">Cantidad de participantes</label>
+                <input type="number" id="cantidad" name="cantidad" min="2" max="100" placeholder="Ej. 6" required>
+
+                <button type="submit" id="btnCrearIntercambio">Crear intercambio</button>
+            </form>
+
+            <p id="mensaje" class="mensaje"></p>
+            <div id="resultadoIntercambio" class="tarjeta-resultado oculto"></div>
+        </section>
+
+        <section id="unirse" class="panel oculto">
+            <h2>Registrarme en un intercambio</h2>
+            <form id="formRegistrarParticipante">
+                <label for="codigoUnirse">Código del intercambio</label>
+                <input type="text" id="codigoUnirse" name="codigo" placeholder="Ej. 821472DD" maxlength="20" required>
+
+                <label for="nombreParticipante">Tu nombre</label>
+                <input type="text" id="nombreParticipante" name="nombre" placeholder="Escribe tu nombre" maxlength="100" required>
+
+                <label for="correoParticipante">Tu correo electrónico</label>
+                <input type="email" id="correoParticipante" name="correo" placeholder="correo@ejemplo.com" maxlength="150" required>
+
+                <label for="pinParticipante">PIN personal (4 a 12 caracteres)</label>
+                <input type="password" id="pinParticipante" name="pin" placeholder="Crea tu PIN secreto" minlength="4" maxlength="12" required>
+
+                <button type="submit" id="btnRegistrarParticipante">Registrar participante</button>
+            </form>
+
+            <p id="mensajeParticipante" class="mensaje"></p>
+            <div id="resultadoParticipante" class="tarjeta-resultado oculto"></div>
+        </section>
+
+        <section id="sala" class="panel oculto">
+            <h2>Sala de espera y sorteo</h2>
+            <form id="formBuscarSala">
+                <label for="codigoSala">Código del intercambio</label>
+                <input type="text" id="codigoSala" name="codigo" placeholder="Ej. 821472DD" maxlength="20" required>
+                <button type="submit" id="btnConsultarSala">Consultar sala</button>
+            </form>
+
+            <p id="mensajeSala" class="mensaje"></p>
+            <div id="detalleSala" class="oculto"></div>
+
+            <div id="bloqueSorteo" class="subpanel oculto">
+                <h3>Iniciar sorteo</h3>
+                <p id="textoSorteo">Disponible cuando todos los participantes estén registrados.</p>
+                <button type="button" id="btnSortear" disabled>Realizar sorteo ahora</button>
+                <p id="mensajeSorteo" class="mensaje"></p>
+            </div>
+        </section>
+
+        <section id="consulta" class="panel oculto">
+            <h2>Consultar mi asignación</h2>
+            <form id="formConsultaAsignacion">
+                <label for="codigoConsulta">Código del intercambio</label>
+                <input type="text" id="codigoConsulta" required>
+
+                <label for="correoConsulta">Tu correo electrónico</label>
+                <input type="email" id="correoConsulta" required>
+
+                <label for="pinConsulta">Tu PIN personal</label>
+                <input type="password" id="pinConsulta" required>
+
+                <button type="submit" id="btnConsultarAsignacion">Descubrir a quién le regalo</button>
+            </form>
+
+            <p id="mensajeConsulta" class="mensaje"></p>
+            <div id="resultadoAsignacion" class="tarjeta-resultado oculto"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Hecho con ❤️ para compartir la magia de regalar.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

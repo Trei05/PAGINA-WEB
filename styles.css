@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f3eb;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado {
+    background: #702d35;
+    color: white;
+    text-align: center;
+    padding: 28px 15px 20px;
+}
+
+.encabezado h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 8px;
+}
+
+.barra-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.contenedor {
+    width: 92%;
+    max-width: 620px;
+    margin: 40px auto;
+    flex: 1;
+}
+
+.bienvenida,
+.panel {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.bienvenida {
+    text-align: center;
+}
+
+.icono {
+    font-size: 60px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    color: #702d35;
+    margin-bottom: 14px;
+}
+
+h3 {
+    color: #702d35;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.acciones-grupo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background: #702d35;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #91434c;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.panel label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: 600;
+}
+
+.panel input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.panel button[type="submit"] {
+    width: 100%;
+}
+
+.subpanel {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.tarjeta-resultado {
+    margin-top: 16px;
+    padding: 16px;
+    background: #fdf9f4;
+    border: 1px solid #e7ddd0;
+    border-radius: 12px;
+}
+
+.lista-participantes {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.lista-participantes li {
+    margin-bottom: 6px;
+}
+
+.destacado-asignado {
+    font-size: 22px;
+    font-weight: bold;
+    color: #702d35;
+    margin-top: 8px;
+}
+
+.mensaje {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #702d35;
+}
+
+.oculto {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (min-width: 520px) {
+    .acciones-grupo {
+        grid-template-columns: 1fr 1fr;
+    }
+}
